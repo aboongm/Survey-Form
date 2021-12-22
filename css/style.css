@@ -1,175 +1,150 @@
-/* ========== START Dark Mode Colors ========== */
-:root {
-    --primary: #131516;
-    --secondary: #3e464b;
-    --text: #d8d4cf;
-    --blue: #004daa;
-    --caption: #e8e6e3;
-}
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
-/* ========== END Dark Mode Colors ========== */
-/* ========== START CSS Reset ========== */
-html {
-    box-sizing: border-box;
-    font-size: 16px;
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --primary-1: hsl(205, 86%, 17%);
+  --primary-2: hsl(205, 77%, 27%);
+  --primary-3: hsl(205, 72%, 37%);
+  --primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --primary-6: hsl(205, 89%, 70%);
+  --primary-7: hsl(205, 90%, 76%);
+  --primary-8: hsl(205, 86%, 81%);
+  --primary-9: hsl(205, 90%, 88%);
+  --primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --grey-1: hsl(209, 61%, 16%);
+  --grey-2: hsl(211, 39%, 23%);
+  --grey-3: hsl(209, 34%, 30%);
+  --grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --grey-5: hsl(210, 22%, 49%);
+  --grey-6: hsl(209, 23%, 60%);
+  --grey-7: hsl(211, 27%, 70%);
+  --grey-8: hsl(210, 31%, 80%);
+  --grey-9: hsl(212, 33%, 89%);
+  --grey-10: hsl(210, 36%, 96%);
+  --white: #fff;
+  --red-dark: hsl(360, 67%, 44%);
+  --red-light: hsl(360, 71%, 66%);
+  --green-dark: hsl(125, 67%, 44%);
+  --green-light: hsl(125, 71%, 66%);
+  --black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
 }
+/*
+=============== 
+Global Styles
+===============
+*/
 
 *,
-*:before,
-*:after {
-    box-sizing: inherit;
-    font-size: inherit;
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-body,
+body {
+  font-family: var(--ff-secondary);
+  background: var(--grey-10);
+  color: var(--grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
 }
-
-ol,
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* ========== END CSS Reset ========== */
-
-body {
-    color: var(--text);
-    background-color: var(--primary);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-li a {
-    color: var(--text);
-    text-decoration: none;
-}
-
-header {
-    background-color: var(--secondary);
-
-    height: 12vh;
-    width: 100%;
-
-    position: fixed;
-    top: 0;
-
-    display: flex;
-}
-
-nav {
-    flex: 1;
-
-    display: flex;
-}
-
-ul {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 12px;
-
-    gap: 16px;
-
-    flex: 1;
-}
-
-li {
-    height: 100%;
-    width: 10%;
-    min-width: fit-content;
-
-    font-size: 1.5rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-li:hover {
-    background-color: var(--blue);
-}
-
-#welcome-section {
-    height: 88vh;
-    margin-top: 20vh;
-
-    font-size: 4rem;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-
-    flex-direction: column;
-
-}
-
 h1 {
-    margin-top: 20vh;
+  font-size: 3rem;
 }
-
-p {
-    margin-top: 2rem;
-    font-size: 32px;
-    font-style: italic;
-    font-weight: 100;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
 h2 {
-    font-size: 2rem;
-    text-shadow: 0 7px var(--blue);
+  font-size: 2rem;
 }
-
-div {
-    display: flex;
-    gap: 18px;
-    align-items: center;
-    justify-content: center;
+h3 {
+  font-size: 1.25rem;
 }
-
-#projects {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    background-color: var(--secondary);
+h4 {
+  font-size: 0.875rem;
 }
-
-.project-tile {
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
     font-size: 1rem;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text);
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
 }
 
-#profile-link {
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--text);
-    align-items: center;
+/* global styles */
+.container {
+  background-color: var(--grey-1);
+  max-width: 70%;
+  color: var(--primary-10);
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+.submit-button {
+  transition: all 0.3s linear;
+  border: 1px solid #222;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.submit-button:hover {
+  background-color: var(--primary-4);
+  color: var(--primary-10);
 }
